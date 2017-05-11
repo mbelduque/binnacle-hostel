@@ -189,7 +189,7 @@ public class VistaSecundaria extends javax.swing.JFrame {
 		placeHolderPrecio.changeAlpha(0.75f);
 		placeHolderPrecio.setHorizontalAlignment(SwingConstants.LEFT);
 
-		placeHolderBuscar = new TextPrompt("Nombre y apellido", txtBuscar);
+		placeHolderBuscar = new TextPrompt("Número de habitación", txtBuscar);
 		placeHolderBuscar.changeStyle(Font.ITALIC);
 		placeHolderBuscar.changeAlpha(0.75f);
 		placeHolderBuscar.setHorizontalAlignment(SwingConstants.CENTER);
@@ -326,13 +326,13 @@ public class VistaSecundaria extends javax.swing.JFrame {
 
 	public void buscarHuesped() {
 		if (txtBuscar.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(rootPane, "Debe ingresar un nombre y apellido para buscar", "Advertencia",
+			JOptionPane.showMessageDialog(rootPane, "Debe ingresar un número de habitación para buscar", "Advertencia",
 					JOptionPane.WARNING_MESSAGE);
 		} else {
 			listaBusqueda = lista;
 			String dato = txtBuscar.getText();
 			for (int i = 0; i < listaBusqueda.size(); i++) {
-				if (dato.equals(listaBusqueda.get(i).getNombreYapellidos())) {
+				if (dato.equals(listaBusqueda.get(i).getHabitacion())) {
 					JOptionPane.showMessageDialog(rootPane,
 							"\nHabitación : " + lista.get(i).getHabitacion() + "\n\nNombre y apellidos : "
 									+ lista.get(i).getNombreYapellidos() + "\n\nID : " + lista.get(i).getId()

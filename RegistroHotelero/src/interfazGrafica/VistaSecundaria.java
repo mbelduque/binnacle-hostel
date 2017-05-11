@@ -61,8 +61,8 @@ public class VistaSecundaria extends javax.swing.JFrame {
 		lblNombApellidos = new javax.swing.JLabel();
 		lblPrecio = new javax.swing.JLabel();
 		lblID = new javax.swing.JLabel();
-		btnRegistrarHuesped = new javax.swing.JButton();
-		btnRegistrarHuesped.setIcon(new ImageIcon(
+		btnRegistrar = new javax.swing.JButton();
+		btnRegistrar.setIcon(new ImageIcon(
 				VistaSecundaria.class.getResource("/com/sun/javafx/scene/web/skin/IncreaseIndent_16x16_JFX.png")));
 		jScrollPaneTablaDatos = new javax.swing.JScrollPane();
 		tablaHuesped = new javax.swing.JTable();
@@ -83,7 +83,7 @@ public class VistaSecundaria extends javax.swing.JFrame {
 				VistaSecundaria.class.getResource("/com/sun/javafx/scene/web/skin/AlignLeft_16x16_JFX.png")));
 		lblImagenApp = new javax.swing.JLabel();
 
-		setTitle("Hotel Quick Registration");
+		setTitle("Registro Hotelero");
 		setResizable(false);
 
 		lblHabitacion.setText("Habitacion");
@@ -108,10 +108,10 @@ public class VistaSecundaria extends javax.swing.JFrame {
 						.addGap(29)));
 		jPanelLabels.setLayout(jPanelLabelsLayout);
 
-		btnRegistrarHuesped.setText("Registrar huesped");
-		btnRegistrarHuesped.addActionListener(new java.awt.event.ActionListener() {
+		btnRegistrar.setText("Registrar huesped");
+		btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				btnRegistrarHuespedActionPerformed(evt);
+				btnRegistrarActionPerformed(evt);
 			}
 		});
 
@@ -207,24 +207,27 @@ public class VistaSecundaria extends javax.swing.JFrame {
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
 		layout.setHorizontalGroup(layout.createParallelGroup(Alignment.LEADING)
-				.addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(Alignment.TRAILING)
-						.addGroup(layout.createSequentialGroup()
-								.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(btnRegistrarHuesped).addGap(18).addComponent(btnEliminar).addGap(18)
-								.addComponent(btnOrdenar).addGap(18).addComponent(btnBuscar).addGap(18)
-								.addComponent(txtBuscar, GroupLayout.PREFERRED_SIZE, 236, GroupLayout.PREFERRED_SIZE)
-								.addGap(530))
-						.addGroup(layout.createSequentialGroup().addGap(62).addComponent(lblImagenApp).addGap(18)
-								.addComponent(jPanelLabels, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
-								.addGap(18)
-								.addComponent(jPanelTextFields, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
-								.addGap(0, 552, Short.MAX_VALUE))
-						.addGroup(layout.createSequentialGroup().addContainerGap().addComponent(separator,
-								GroupLayout.DEFAULT_SIZE, 1276, Short.MAX_VALUE))
-						.addGroup(layout.createSequentialGroup().addContainerGap().addComponent(jScrollPaneTablaDatos,
-								GroupLayout.DEFAULT_SIZE, 1276, Short.MAX_VALUE)))
+				.addGroup(layout.createSequentialGroup()
+						.addGroup(layout.createParallelGroup(Alignment.TRAILING)
+								.addGroup(layout.createSequentialGroup()
+										.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(btnRegistrar).addGap(18).addComponent(btnEliminar).addGap(18)
+										.addComponent(btnOrdenar).addGap(18).addComponent(btnBuscar).addGap(18)
+										.addComponent(txtBuscar, GroupLayout.PREFERRED_SIZE, 236,
+												GroupLayout.PREFERRED_SIZE)
+										.addGap(530))
+								.addGroup(
+										layout.createSequentialGroup().addGap(62).addComponent(lblImagenApp).addGap(18)
+												.addComponent(jPanelLabels, GroupLayout.PREFERRED_SIZE,
+														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+												.addGap(18)
+												.addComponent(jPanelTextFields, GroupLayout.PREFERRED_SIZE,
+														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+												.addGap(0, 552, Short.MAX_VALUE))
+								.addGroup(layout.createSequentialGroup().addContainerGap().addComponent(separator,
+										GroupLayout.DEFAULT_SIZE, 1276, Short.MAX_VALUE))
+								.addGroup(layout.createSequentialGroup().addContainerGap().addComponent(
+										jScrollPaneTablaDatos, GroupLayout.DEFAULT_SIZE, 1276, Short.MAX_VALUE)))
 						.addContainerGap()));
 		layout.setVerticalGroup(layout.createParallelGroup(Alignment.LEADING)
 				.addGroup(layout.createSequentialGroup().addGap(41)
@@ -238,7 +241,7 @@ public class VistaSecundaria extends javax.swing.JFrame {
 										.addPreferredGap(ComponentPlacement.RELATED)))
 						.addGap(18).addComponent(separator, GroupLayout.PREFERRED_SIZE, 6, GroupLayout.PREFERRED_SIZE)
 						.addGap(37)
-						.addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(btnRegistrarHuesped)
+						.addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(btnRegistrar)
 								.addComponent(btnEliminar).addComponent(btnOrdenar).addComponent(btnBuscar)
 								.addComponent(txtBuscar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE))
@@ -250,7 +253,25 @@ public class VistaSecundaria extends javax.swing.JFrame {
 		pack();
 	}
 
-	private void btnRegistrarHuespedActionPerformed(java.awt.event.ActionEvent evt) {
+	private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {
+		registrarHuesped();
+	}
+
+	private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {
+		eliminarHuesped();
+	}
+
+	private void btnOrdenarActionPerformed(java.awt.event.ActionEvent evt) {
+		ordenarLista();
+	}
+
+	private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {
+		buscarHuesped();
+	}
+
+	// Metodos para cada uno de los 4 botones
+
+	public void registrarHuesped() {
 		if (txtHabitacion.getText().isEmpty() && txtNombreApellidos.getText().isEmpty() && txtId.getText().isEmpty()
 				&& txtPrecio.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(rootPane,
@@ -262,7 +283,7 @@ public class VistaSecundaria extends javax.swing.JFrame {
 			lista.add(huesped);
 			JOptionPane.showMessageDialog(rootPane, "Huesped registrado con exito!", "Registro huespedes",
 					JOptionPane.INFORMATION_MESSAGE);
-			mostrar();
+			actualizarTabla();
 		}
 
 		txtHabitacion.setText("");
@@ -271,7 +292,7 @@ public class VistaSecundaria extends javax.swing.JFrame {
 		txtPrecio.setText("");
 	}
 
-	private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {
+	public void eliminarHuesped() {
 		if (lista.isEmpty()) {
 			JOptionPane.showMessageDialog(rootPane, "Debe ingresar minimo un huesped para eliminar!", "Advertencia",
 					JOptionPane.WARNING_MESSAGE);
@@ -283,22 +304,27 @@ public class VistaSecundaria extends javax.swing.JFrame {
 							"Eliminación huesped", 1);
 				}
 			}
-
-			// Actualizar tabla
-			String matris[][] = new String[lista.size()][4];
-			for (int i = 0; i < lista.size(); i++) {
-				matris[i][0] = lista.get(i).getHabitacion();
-				matris[i][1] = lista.get(i).getNombreYapellidos();
-				matris[i][2] = lista.get(i).getId();
-				matris[i][3] = lista.get(i).getPrecio();
-			}
-
-			tablaHuesped.setModel(new javax.swing.table.DefaultTableModel(matris,
-					new String[] { "Habitación", "Nombre y apellidos", "ID", "Precio" }));
+			actualizarTabla();
 		}
 	}
 
-	private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {
+	public void ordenarLista() {
+		if (lista.isEmpty()) {
+			JOptionPane.showMessageDialog(rootPane, "Debe ingresar minimo dos huespedes para ordenar!", "Advertencia",
+					JOptionPane.WARNING_MESSAGE);
+		} else
+			Collections.sort(lista);
+
+		String matris[][] = new String[lista.size()][4];
+		for (int i = 0; i < lista.size(); i++) {
+			matris[i][1] = lista.get(i).getNombreYapellidos();
+		}
+
+		JOptionPane.showMessageDialog(rootPane, matris, "Listado de huespedes por orden alfabetico",
+				JOptionPane.PLAIN_MESSAGE);
+	}
+
+	public void buscarHuesped() {
 		if (txtBuscar.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(rootPane, "Debe ingresar un nombre y apellido para buscar", "Advertencia",
 					JOptionPane.WARNING_MESSAGE);
@@ -319,27 +345,7 @@ public class VistaSecundaria extends javax.swing.JFrame {
 		txtBuscar.setText("");
 	}
 
-	public void ordenarLista() {
-		if (lista.isEmpty()) {
-			JOptionPane.showMessageDialog(rootPane, "Debe ingresar minimo dos huespedes para ordenar!", "Advertencia",
-					JOptionPane.WARNING_MESSAGE);
-		} else
-			Collections.sort(lista);
-
-		String matris[][] = new String[lista.size()][4];
-		for (int i = 0; i < lista.size(); i++) {
-			matris[i][1] = lista.get(i).getNombreYapellidos();
-		}
-
-		JOptionPane.showMessageDialog(rootPane, matris, "Listado de huespedes por orden alfabetico",
-				JOptionPane.PLAIN_MESSAGE);
-	}
-
-	private void btnOrdenarActionPerformed(java.awt.event.ActionEvent evt) {
-		ordenarLista();
-	}
-
-	public void mostrar() {
+	public void actualizarTabla() {
 		String matris[][] = new String[lista.size()][4];
 
 		for (int i = 0; i < lista.size(); i++) {
@@ -378,7 +384,7 @@ public class VistaSecundaria extends javax.swing.JFrame {
 	private javax.swing.JButton btnBuscar;
 	private javax.swing.JToggleButton btnEliminar;
 	private javax.swing.JButton btnOrdenar;
-	private javax.swing.JButton btnRegistrarHuesped;
+	private javax.swing.JButton btnRegistrar;
 	private javax.swing.JPanel jPanelLabels;
 	private javax.swing.JPanel jPanelTextFields;
 	private javax.swing.JScrollPane jScrollPaneTablaDatos;

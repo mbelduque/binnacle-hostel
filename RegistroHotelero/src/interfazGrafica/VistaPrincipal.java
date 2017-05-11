@@ -1,16 +1,12 @@
 package interfazGrafica;
 
-import java.util.ArrayList;
-import javax.swing.JFrame;
-
-import classes.Huesped;
 import java.awt.Toolkit;
+
+import javax.swing.JFrame;
 
 public class VistaPrincipal extends javax.swing.JFrame {
 
 	private static final long serialVersionUID = 1L;
-	ArrayList<Huesped> lista = new ArrayList<>();
-	ArrayList<Huesped> listaBusqueda = new ArrayList<>();
 
 	public VistaPrincipal() {
 		setIconImage(
@@ -27,7 +23,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
 		btnIniciar = new javax.swing.JButton();
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-		setTitle("Hotel Quick Registration");
+		setTitle("Registro Hotelero");
 		setName("framePpal");
 		setResizable(false);
 
@@ -47,7 +43,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
 		btnIniciar.setText("Iniciar ");
 		btnIniciar.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				btnRegistrarActionPerformed(evt);
+				btnIniciarActionPerformed(evt);
 			}
 		});
 
@@ -64,14 +60,16 @@ public class VistaPrincipal extends javax.swing.JFrame {
 						.addGroup(layout.createSequentialGroup().addGap(67, 67, 67).addComponent(btnIniciar,
 								javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
 				.addContainerGap(34, Short.MAX_VALUE)));
-		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-						.addContainerGap(24, Short.MAX_VALUE).addComponent(jLabelImagen).addGap(18, 18, 18)
+		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(
+				javax.swing.GroupLayout.Alignment.TRAILING,
+				layout.createSequentialGroup().addContainerGap(24, Short.MAX_VALUE).addComponent(jLabelImagen)
+						.addGap(18, 18, 18)
 						.addComponent(jSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 15,
 								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(jLabelBienvenido)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-						.addComponent(btnIniciar).addGap(19, 19, 19)));
+						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+						.addComponent(jLabelBienvenido)
+						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addComponent(btnIniciar)
+						.addGap(19, 19, 19)));
 
 		jLabelImagen.getAccessibleContext().setAccessibleName("labelImagenApp");
 
@@ -80,7 +78,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
 		pack();
 	}
 
-	private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {
+	private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {
 		VistaSecundaria vistaSecundaria = new VistaSecundaria();
 		vistaSecundaria.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		vistaSecundaria.setLocationRelativeTo(null);

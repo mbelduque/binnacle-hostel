@@ -4,10 +4,14 @@ import interfazGrafica.VistaPrincipal;
 
 public class Principal {
 
-	public static void main(String[] args) {
+	public static void iniciarApp() {
 		VistaPrincipal vistaPrincipal = new VistaPrincipal();
 		vistaPrincipal.setLocationRelativeTo(null);
 		vistaPrincipal.setVisible(true);
+	}
+	
+	public static void main(String[] args) {
+		iniciarApp();
 	}
 
 }

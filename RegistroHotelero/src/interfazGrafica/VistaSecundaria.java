@@ -9,6 +9,7 @@ import java.util.Collections;
 
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JSeparator;
 import javax.swing.LayoutStyle.ComponentPlacement;
@@ -16,7 +17,6 @@ import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
 import classes.Huesped;
-import javax.swing.ImageIcon;
 
 public class VistaSecundaria extends javax.swing.JFrame {
 
@@ -62,6 +62,7 @@ public class VistaSecundaria extends javax.swing.JFrame {
 		lblPrecio = new javax.swing.JLabel();
 		lblID = new javax.swing.JLabel();
 		btnRegistrar = new javax.swing.JButton();
+		btnRegistrar.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnRegistrar.setIcon(new ImageIcon(
 				VistaSecundaria.class.getResource("/com/sun/javafx/scene/web/skin/IncreaseIndent_16x16_JFX.png")));
 		jScrollPaneTablaDatos = new javax.swing.JScrollPane();
@@ -72,13 +73,16 @@ public class VistaSecundaria extends javax.swing.JFrame {
 		txtPrecio = new javax.swing.JTextField();
 		txtId = new javax.swing.JTextField();
 		btnEliminar = new javax.swing.JToggleButton();
+		btnEliminar.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnEliminar.setIcon(new ImageIcon(
 				VistaSecundaria.class.getResource("/com/sun/java/swing/plaf/windows/icons/TreeLeaf.gif")));
 		btnBuscar = new javax.swing.JButton();
+		btnBuscar.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnBuscar.setIcon(
 				new ImageIcon(VistaSecundaria.class.getResource("/javax/swing/plaf/metal/icons/ocean/expanded.gif")));
 		txtBuscar = new javax.swing.JTextField();
 		btnOrdenar = new javax.swing.JButton();
+		btnOrdenar.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnOrdenar.setIcon(new ImageIcon(
 				VistaSecundaria.class.getResource("/com/sun/javafx/scene/web/skin/AlignLeft_16x16_JFX.png")));
 		lblImagenApp = new javax.swing.JLabel();
@@ -215,7 +219,7 @@ public class VistaSecundaria extends javax.swing.JFrame {
 										.addComponent(btnOrdenar).addGap(18).addComponent(btnBuscar).addGap(18)
 										.addComponent(txtBuscar, GroupLayout.PREFERRED_SIZE, 236,
 												GroupLayout.PREFERRED_SIZE)
-										.addGap(530))
+										.addGap(542))
 								.addGroup(
 										layout.createSequentialGroup().addGap(62).addComponent(lblImagenApp).addGap(18)
 												.addComponent(jPanelLabels, GroupLayout.PREFERRED_SIZE,
@@ -223,11 +227,11 @@ public class VistaSecundaria extends javax.swing.JFrame {
 												.addGap(18)
 												.addComponent(jPanelTextFields, GroupLayout.PREFERRED_SIZE,
 														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addGap(0, 552, Short.MAX_VALUE))
+												.addGap(0, 692, Short.MAX_VALUE))
 								.addGroup(layout.createSequentialGroup().addContainerGap().addComponent(separator,
-										GroupLayout.DEFAULT_SIZE, 1276, Short.MAX_VALUE))
+										GroupLayout.DEFAULT_SIZE, 1424, Short.MAX_VALUE))
 								.addGroup(layout.createSequentialGroup().addContainerGap().addComponent(
-										jScrollPaneTablaDatos, GroupLayout.DEFAULT_SIZE, 1276, Short.MAX_VALUE)))
+										jScrollPaneTablaDatos, GroupLayout.DEFAULT_SIZE, 1424, Short.MAX_VALUE)))
 						.addContainerGap()));
 		layout.setVerticalGroup(layout.createParallelGroup(Alignment.LEADING)
 				.addGroup(layout.createSequentialGroup().addGap(41)
@@ -270,6 +274,7 @@ public class VistaSecundaria extends javax.swing.JFrame {
 	}
 
 	// Metodos para cada uno de los 4 botones
+	// ********************************************************************************************************************************************************
 
 	public void registrarHuesped() {
 		if (txtHabitacion.getText().isEmpty() && txtNombreApellidos.getText().isEmpty() && txtId.getText().isEmpty()
@@ -292,6 +297,8 @@ public class VistaSecundaria extends javax.swing.JFrame {
 		txtPrecio.setText("");
 	}
 
+	// ********************************************************************************************************************************************************
+
 	public void eliminarHuesped() {
 		if (lista.isEmpty()) {
 			JOptionPane.showMessageDialog(rootPane, "Debe ingresar minimo un huesped para eliminar!", "Advertencia",
@@ -307,6 +314,8 @@ public class VistaSecundaria extends javax.swing.JFrame {
 			actualizarTabla();
 		}
 	}
+
+	// ********************************************************************************************************************************************************
 
 	public void ordenarLista() {
 		if (lista.isEmpty()) {
@@ -324,6 +333,8 @@ public class VistaSecundaria extends javax.swing.JFrame {
 				JOptionPane.PLAIN_MESSAGE);
 	}
 
+	// ********************************************************************************************************************************************************
+
 	public void buscarHuesped() {
 		if (txtBuscar.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(rootPane, "Debe ingresar un número de habitación para buscar", "Advertencia",
@@ -334,7 +345,7 @@ public class VistaSecundaria extends javax.swing.JFrame {
 			for (int i = 0; i < listaBusqueda.size(); i++) {
 				if (dato.equals(listaBusqueda.get(i).getHabitacion())) {
 					JOptionPane.showMessageDialog(rootPane,
-							 "\nHabitación : " + lista.get(i).getHabitacion() + "\n\nNombre y apellidos : "
+							"\nHabitación : " + lista.get(i).getHabitacion() + "\n\nNombre y apellidos : "
 									+ lista.get(i).getNombreYapellidos() + "\n\nID : " + lista.get(i).getId()
 									+ "\n\nPrecio : " + lista.get(i).getPrecio() + "\n\n",
 							"Resultado de busqueda", 1);
@@ -344,6 +355,8 @@ public class VistaSecundaria extends javax.swing.JFrame {
 
 		txtBuscar.setText("");
 	}
+
+	// ********************************************************************************************************************************************************
 
 	public void actualizarTabla() {
 		String matris[][] = new String[lista.size()][4];
@@ -359,20 +372,9 @@ public class VistaSecundaria extends javax.swing.JFrame {
 				new String[] { "Habitación", "Nombre y apellidos", "ID", "Precio" }));
 	}
 
-	public static void main(String args[]) {
-		try {
-			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-				if ("Nimbus".equals(info.getName())) {
-					javax.swing.UIManager.setLookAndFeel(info.getClassName());
-					break;
-				}
-			}
-		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
-				| javax.swing.UnsupportedLookAndFeelException ex) {
-			java.util.logging.Logger.getLogger(VistaSecundaria.class.getName()).log(java.util.logging.Level.SEVERE,
-					null, ex);
-		}
+	// ********************************************************************************************************************************************************
 
+	public static void main(String args[]) {
 		java.awt.EventQueue.invokeLater(() -> {
 			new VistaSecundaria().setVisible(true);
 		});

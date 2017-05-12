@@ -334,7 +334,7 @@ public class VistaSecundaria extends javax.swing.JFrame {
 			for (int i = 0; i < listaBusqueda.size(); i++) {
 				if (dato.equals(listaBusqueda.get(i).getHabitacion())) {
 					JOptionPane.showMessageDialog(rootPane,
-							"\nHabitación : " + lista.get(i).getHabitacion() + "\n\nNombre y apellidos : "
+							 "\nHabitación : " + lista.get(i).getHabitacion() + "\n\nNombre y apellidos : "
 									+ lista.get(i).getNombreYapellidos() + "\n\nID : " + lista.get(i).getId()
 									+ "\n\nPrecio : " + lista.get(i).getPrecio() + "\n\n",
 							"Resultado de busqueda", 1);

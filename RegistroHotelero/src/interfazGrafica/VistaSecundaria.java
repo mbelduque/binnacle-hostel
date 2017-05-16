@@ -67,6 +67,7 @@ public class VistaSecundaria extends javax.swing.JFrame {
 				VistaSecundaria.class.getResource("/com/sun/javafx/scene/web/skin/IncreaseIndent_16x16_JFX.png")));
 		jScrollPaneTablaDatos = new javax.swing.JScrollPane();
 		tablaHuesped = new javax.swing.JTable();
+		tablaHuesped.setFont(new Font("Tahoma", Font.BOLD, 14));
 		jPanelTextFields = new javax.swing.JPanel();
 		txtHabitacion = new javax.swing.JTextField();
 		txtNombreApellidos = new javax.swing.JTextField();

@@ -1,6 +1,6 @@
-package classes;
+package model;
 
-import interfazGrafica.VistaPrincipal;
+import view.VistaPrincipal;
 
 public class Principal {
 
@@ -9,7 +9,7 @@ public class Principal {
 		vistaPrincipal.setLocationRelativeTo(null);
 		vistaPrincipal.setVisible(true);
 	}
-	
+
 	public static void main(String[] args) {
 		iniciarApp();
 	}

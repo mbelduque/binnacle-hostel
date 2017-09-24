@@ -1,8 +1,13 @@
-package interfazGrafica;
+package view;
 
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
+import javax.swing.UIManager;
+
+import org.jdesktop.beansbinding.AutoBinding;
+
+import de.javasoft.plaf.synthetica.SyntheticaOrangeMetallicLookAndFeel;
 
 public class VistaPrincipal extends javax.swing.JFrame {
 
@@ -27,9 +32,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
 		setName("framePpal");
 		setResizable(false);
 
-		@SuppressWarnings("rawtypes")
-		org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(
-				org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this,
+		@SuppressWarnings({})
+		AutoBinding<VistaPrincipal, Object, VistaPrincipal, Object> binding = org.jdesktop.beansbinding.Bindings
+		.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this,
 				org.jdesktop.beansbinding.ELProperty.create("${iconImage}"), this,
 				org.jdesktop.beansbinding.BeanProperty.create("iconImage"));
 		bindingGroup.addBinding(binding);
@@ -63,13 +68,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
 		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(
 				javax.swing.GroupLayout.Alignment.TRAILING,
 				layout.createSequentialGroup().addContainerGap(24, Short.MAX_VALUE).addComponent(jLabelImagen)
-						.addGap(18, 18, 18)
-						.addComponent(jSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 15,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(jLabelBienvenido)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addComponent(btnIniciar)
-						.addGap(19, 19, 19)));
+				.addGap(18, 18, 18)
+				.addComponent(jSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 15,
+						javax.swing.GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+				.addComponent(jLabelBienvenido)
+				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addComponent(btnIniciar)
+				.addGap(19, 19, 19)));
 
 		jLabelImagen.getAccessibleContext().setAccessibleName("labelImagenApp");
 
@@ -87,16 +92,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
 	public static void main(String args[]) {
 		try {
-			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-				if ("Nimbus".equals(info.getName())) {
-					javax.swing.UIManager.setLookAndFeel(info.getClassName());
-					break;
-				}
-			}
-		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
-				| javax.swing.UnsupportedLookAndFeelException ex) {
-			java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null,
-					ex);
+			UIManager.setLookAndFeel(new SyntheticaOrangeMetallicLookAndFeel());
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
 		java.awt.EventQueue.invokeLater(() -> {

@@ -1,4 +1,4 @@
-package interfazGrafica;
+package view;
 
 import java.awt.Font;
 import java.awt.Toolkit;
@@ -16,7 +16,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
-import classes.Huesped;
+import model.Huesped;
 
 public class VistaSecundaria extends javax.swing.JFrame {
 
@@ -194,7 +194,7 @@ public class VistaSecundaria extends javax.swing.JFrame {
 		placeHolderPrecio.changeAlpha(0.75f);
 		placeHolderPrecio.setHorizontalAlignment(SwingConstants.LEFT);
 
-		placeHolderBuscar = new TextPrompt("Número de habitación", txtBuscar);
+		placeHolderBuscar = new TextPrompt("Numero de habitacion", txtBuscar);
 		placeHolderBuscar.changeStyle(Font.ITALIC);
 		placeHolderBuscar.changeAlpha(0.75f);
 		placeHolderBuscar.setHorizontalAlignment(SwingConstants.CENTER);
@@ -308,8 +308,8 @@ public class VistaSecundaria extends javax.swing.JFrame {
 			for (int i = 0; i < lista.size(); i++) {
 				if (habitacion.equals(lista.get(i).getHabitacion())) {
 					lista.remove(i);
-					JOptionPane.showMessageDialog(rootPane, "La habitación ahora esta desocupada!",
-							"Eliminación huesped", 1);
+					JOptionPane.showMessageDialog(rootPane, "la habitacion ahora esta desocupada",
+							"Eliminacion huesped", 1);
 				}
 			}
 			actualizarTabla();
@@ -338,7 +338,7 @@ public class VistaSecundaria extends javax.swing.JFrame {
 
 	public void buscarHuesped() {
 		if (txtBuscar.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(rootPane, "Debe ingresar un número de habitación para buscar", "Advertencia",
+			JOptionPane.showMessageDialog(rootPane, "Debe ingresar un numero de habitacion para buscar", "Advertencia",
 					JOptionPane.WARNING_MESSAGE);
 		} else {
 			listaBusqueda = lista;
@@ -346,7 +346,7 @@ public class VistaSecundaria extends javax.swing.JFrame {
 			for (int i = 0; i < listaBusqueda.size(); i++) {
 				if (dato.equals(listaBusqueda.get(i).getHabitacion())) {
 					JOptionPane.showMessageDialog(rootPane,
-							"\nHabitación : " + lista.get(i).getHabitacion() + "\n\nNombre y apellidos : "
+							"\nHabitacion : " + lista.get(i).getHabitacion() + "\n\nNombre y apellidos : "
 									+ lista.get(i).getNombreYapellidos() + "\n\nID : " + lista.get(i).getId()
 									+ "\n\nPrecio : " + lista.get(i).getPrecio() + "\n\n",
 							"Resultado de busqueda", 1);
@@ -370,7 +370,7 @@ public class VistaSecundaria extends javax.swing.JFrame {
 		}
 
 		tablaHuesped.setModel(new javax.swing.table.DefaultTableModel(matris,
-				new String[] { "Habitación", "Nombre y apellidos", "ID", "Precio" }));
+				new String[] { "Habitaciï¿½n", "Nombre y apellidos", "ID", "Precio" }));
 	}
 
 	// ********************************************************************************************************************************************************

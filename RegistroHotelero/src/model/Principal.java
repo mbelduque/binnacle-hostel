@@ -1,5 +1,8 @@
 package model;
 
+import javax.swing.UIManager;
+import de.javasoft.plaf.synthetica.SyntheticaOrangeMetallicLookAndFeel;
+
 import view.VistaPrincipal;
 
 public class Principal {
@@ -11,6 +14,12 @@ public class Principal {
 	}
 
 	public static void main(String[] args) {
+		try {
+			UIManager.setLookAndFeel(new SyntheticaOrangeMetallicLookAndFeel());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 		iniciarApp();
 	}
 

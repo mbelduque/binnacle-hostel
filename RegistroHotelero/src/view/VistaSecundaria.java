@@ -34,11 +34,10 @@ public class VistaSecundaria extends javax.swing.JFrame {
 	ArrayList<Huesped> listaBusqueda = new ArrayList<>();
 
 	public VistaSecundaria() {
-		setIconImage(
-				Toolkit.getDefaultToolkit().getImage(VistaSecundaria.class.getResource("/ImagesIcons/IconoApp.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(
+				VistaSecundaria.class.getResource("/ImagesIcons/walkers-iloveimg-resized-iloveimg-resized.png")));
 		initComponents();
 
-		this.setLocationRelativeTo(null);
 		this.setExtendedState(MAXIMIZED_BOTH);
 
 		tablaHuesped.addMouseListener(new MouseAdapter() {
@@ -68,8 +67,9 @@ public class VistaSecundaria extends javax.swing.JFrame {
 		lblID = new javax.swing.JLabel();
 		lblID.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnRegistrar = new javax.swing.JButton();
-		btnRegistrar.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnRegistrar.setIcon(new ImageIcon(VistaSecundaria.class.getResource("/de/javasoft/plaf/synthetica/orangemetallic/images/homeFolderIcon.png")));
+		btnRegistrar.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnRegistrar.setIcon(new ImageIcon(VistaSecundaria.class
+				.getResource("/de/javasoft/plaf/synthetica/orangemetallic/images/homeFolderIcon.png")));
 		jScrollPaneTablaDatos = new javax.swing.JScrollPane();
 		tablaHuesped = new javax.swing.JTable();
 		tablaHuesped.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -79,16 +79,17 @@ public class VistaSecundaria extends javax.swing.JFrame {
 		txtPrecio = new javax.swing.JTextField();
 		txtId = new javax.swing.JTextField();
 		btnEliminar = new javax.swing.JToggleButton();
-		btnEliminar.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnEliminar.setIcon(new ImageIcon(VistaSecundaria.class.getResource("/de/javasoft/plaf/synthetica/orangemetallic/images/closeIcon_hover.png")));
+		btnEliminar.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnEliminar.setIcon(new ImageIcon(VistaSecundaria.class
+				.getResource("/de/javasoft/plaf/synthetica/orangemetallic/images/closeIcon_hover.png")));
 		btnBuscar = new javax.swing.JButton();
-		btnBuscar.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnBuscar.setIcon(
-				new ImageIcon(VistaSecundaria.class.getResource("/ImagesIcons/search.png")));
+		btnBuscar.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnBuscar.setIcon(new ImageIcon(VistaSecundaria.class.getResource("/ImagesIcons/search.png")));
 		txtBuscar = new javax.swing.JTextField();
 		btnOrdenar = new javax.swing.JButton();
-		btnOrdenar.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnOrdenar.setIcon(new ImageIcon(VistaSecundaria.class.getResource("/de/javasoft/plaf/synthetica/orangemetallic/images/checkBox_selected.png")));
+		btnOrdenar.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnOrdenar.setIcon(new ImageIcon(VistaSecundaria.class
+				.getResource("/de/javasoft/plaf/synthetica/orangemetallic/images/checkBox_selected.png")));
 		lblImagenApp = new javax.swing.JLabel();
 
 		setTitle("Registro Hotelero");
@@ -109,8 +110,8 @@ public class VistaSecundaria extends javax.swing.JFrame {
 					.addContainerGap(20, Short.MAX_VALUE)
 					.addGroup(jPanelLabelsLayout.createParallelGroup(Alignment.LEADING)
 						.addComponent(lblHabitacion, Alignment.TRAILING)
-						.addComponent(lblNombApellidos, Alignment.TRAILING)
 						.addComponent(lblID, Alignment.TRAILING)
+						.addComponent(lblNombApellidos, Alignment.TRAILING)
 						.addComponent(lblPrecio, Alignment.TRAILING)))
 		);
 		jPanelLabelsLayout.setVerticalGroup(
@@ -118,13 +119,13 @@ public class VistaSecundaria extends javax.swing.JFrame {
 				.addGroup(jPanelLabelsLayout.createSequentialGroup()
 					.addGap(28)
 					.addComponent(lblHabitacion)
-					.addGap(54)
+					.addGap(30)
 					.addComponent(lblNombApellidos)
-					.addGap(42)
+					.addGap(30)
 					.addComponent(lblID)
-					.addPreferredGap(ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+					.addGap(26)
 					.addComponent(lblPrecio)
-					.addGap(25))
+					.addContainerGap(90, Short.MAX_VALUE))
 		);
 		jPanelLabels.setLayout(jPanelLabelsLayout);
 
@@ -152,24 +153,24 @@ public class VistaSecundaria extends javax.swing.JFrame {
 			jPanelTextFieldsLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(jPanelTextFieldsLayout.createSequentialGroup()
 					.addGroup(jPanelTextFieldsLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(txtId, 278, 278, 278)
-						.addComponent(txtPrecio, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtNombreApellidos, 278, 278, 278)
-						.addComponent(txtHabitacion, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+						.addComponent(txtNombreApellidos, GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+						.addComponent(txtHabitacion, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtId, GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+						.addComponent(txtPrecio, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap())
 		);
 		jPanelTextFieldsLayout.setVerticalGroup(
 			jPanelTextFieldsLayout.createParallelGroup(Alignment.TRAILING)
-				.addGroup(jPanelTextFieldsLayout.createSequentialGroup()
+				.addGroup(Alignment.LEADING, jPanelTextFieldsLayout.createSequentialGroup()
 					.addGap(20)
 					.addComponent(txtHabitacion, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-					.addComponent(txtNombreApellidos, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
-					.addGap(28)
-					.addComponent(txtId, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
-					.addGap(38)
+					.addGap(18)
+					.addComponent(txtNombreApellidos, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addComponent(txtId, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
 					.addComponent(txtPrecio, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
-					.addGap(19))
+					.addContainerGap(76, Short.MAX_VALUE))
 		);
 		jPanelTextFields.setLayout(jPanelTextFieldsLayout);
 
@@ -219,7 +220,8 @@ public class VistaSecundaria extends javax.swing.JFrame {
 			}
 		});
 
-		lblImagenApp.setIcon(new ImageIcon(VistaSecundaria.class.getResource("/ImagesIcons/walkers-iloveimg-resized-iloveimg-resized.png")));
+		lblImagenApp.setIcon(new ImageIcon(
+				VistaSecundaria.class.getResource("/ImagesIcons/walkers-iloveimg-resized-iloveimg-resized.png")));
 
 		JSeparator separator = new JSeparator();
 		separator.setBorder(new LineBorder(new Color(255, 102, 51), 1, true));
@@ -231,17 +233,17 @@ public class VistaSecundaria extends javax.swing.JFrame {
 				.addGroup(layout.createSequentialGroup()
 					.addGroup(layout.createParallelGroup(Alignment.LEADING)
 						.addGroup(layout.createSequentialGroup()
-							.addContainerGap(22, Short.MAX_VALUE)
-							.addComponent(btnRegistrar)
+							.addGap(22)
+							.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 179, GroupLayout.PREFERRED_SIZE)
 							.addGap(18)
-							.addComponent(btnEliminar)
+							.addComponent(btnEliminar, GroupLayout.PREFERRED_SIZE, 169, GroupLayout.PREFERRED_SIZE)
 							.addGap(18)
-							.addComponent(btnOrdenar)
+							.addComponent(btnOrdenar, GroupLayout.PREFERRED_SIZE, 141, GroupLayout.PREFERRED_SIZE)
 							.addGap(18)
-							.addComponent(btnBuscar)
+							.addComponent(btnBuscar, GroupLayout.PREFERRED_SIZE, 163, GroupLayout.PREFERRED_SIZE)
 							.addGap(18)
-							.addComponent(txtBuscar, GroupLayout.PREFERRED_SIZE, 236, GroupLayout.PREFERRED_SIZE)
-							.addGap(542))
+							.addComponent(txtBuscar, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED, 646, Short.MAX_VALUE))
 						.addGroup(layout.createSequentialGroup()
 							.addGap(62)
 							.addComponent(lblImagenApp)
@@ -251,9 +253,11 @@ public class VistaSecundaria extends javax.swing.JFrame {
 							.addComponent(jPanelTextFields, GroupLayout.PREFERRED_SIZE, 280, GroupLayout.PREFERRED_SIZE))
 						.addGroup(layout.createSequentialGroup()
 							.addContainerGap()
-							.addComponent(jScrollPaneTablaDatos, GroupLayout.DEFAULT_SIZE, 1434, Short.MAX_VALUE)))
+							.addComponent(jScrollPaneTablaDatos, GroupLayout.DEFAULT_SIZE, 1522, Short.MAX_VALUE))
+						.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(separator, GroupLayout.DEFAULT_SIZE, 1542, Short.MAX_VALUE)))
 					.addContainerGap())
-				.addComponent(separator, GroupLayout.DEFAULT_SIZE, 1454, Short.MAX_VALUE)
 		);
 		layout.setVerticalGroup(
 			layout.createParallelGroup(Alignment.LEADING)
@@ -267,15 +271,15 @@ public class VistaSecundaria extends javax.swing.JFrame {
 						.addGroup(layout.createSequentialGroup()
 							.addGap(125)
 							.addComponent(lblImagenApp, GroupLayout.PREFERRED_SIZE, 98, GroupLayout.PREFERRED_SIZE)))
-					.addGap(46)
+					.addGap(138)
 					.addComponent(separator, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addGap(110)
-					.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+					.addGap(18)
+					.addGroup(layout.createParallelGroup(Alignment.BASELINE, false)
 						.addComponent(btnRegistrar)
 						.addComponent(btnEliminar)
 						.addComponent(btnOrdenar)
 						.addComponent(btnBuscar)
-						.addComponent(txtBuscar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(txtBuscar, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addComponent(jScrollPaneTablaDatos, GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
 					.addGap(18))

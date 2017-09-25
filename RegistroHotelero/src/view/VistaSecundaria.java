@@ -17,6 +17,8 @@ import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
 import model.Huesped;
+import java.awt.Color;
+import javax.swing.border.LineBorder;
 
 public class VistaSecundaria extends javax.swing.JFrame {
 
@@ -58,13 +60,16 @@ public class VistaSecundaria extends javax.swing.JFrame {
 
 		jPanelLabels = new javax.swing.JPanel();
 		lblHabitacion = new javax.swing.JLabel();
+		lblHabitacion.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNombApellidos = new javax.swing.JLabel();
+		lblNombApellidos.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblPrecio = new javax.swing.JLabel();
+		lblPrecio.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblID = new javax.swing.JLabel();
+		lblID.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnRegistrar = new javax.swing.JButton();
 		btnRegistrar.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnRegistrar.setIcon(new ImageIcon(
-				VistaSecundaria.class.getResource("/com/sun/javafx/scene/web/skin/IncreaseIndent_16x16_JFX.png")));
+		btnRegistrar.setIcon(new ImageIcon(VistaSecundaria.class.getResource("/de/javasoft/plaf/synthetica/orangemetallic/images/homeFolderIcon.png")));
 		jScrollPaneTablaDatos = new javax.swing.JScrollPane();
 		tablaHuesped = new javax.swing.JTable();
 		tablaHuesped.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -75,17 +80,15 @@ public class VistaSecundaria extends javax.swing.JFrame {
 		txtId = new javax.swing.JTextField();
 		btnEliminar = new javax.swing.JToggleButton();
 		btnEliminar.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnEliminar.setIcon(new ImageIcon(
-				VistaSecundaria.class.getResource("/com/sun/java/swing/plaf/windows/icons/TreeLeaf.gif")));
+		btnEliminar.setIcon(new ImageIcon(VistaSecundaria.class.getResource("/de/javasoft/plaf/synthetica/orangemetallic/images/closeIcon_hover.png")));
 		btnBuscar = new javax.swing.JButton();
 		btnBuscar.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnBuscar.setIcon(
-				new ImageIcon(VistaSecundaria.class.getResource("/javax/swing/plaf/metal/icons/ocean/expanded.gif")));
+				new ImageIcon(VistaSecundaria.class.getResource("/ImagesIcons/search.png")));
 		txtBuscar = new javax.swing.JTextField();
 		btnOrdenar = new javax.swing.JButton();
 		btnOrdenar.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnOrdenar.setIcon(new ImageIcon(
-				VistaSecundaria.class.getResource("/com/sun/javafx/scene/web/skin/AlignLeft_16x16_JFX.png")));
+		btnOrdenar.setIcon(new ImageIcon(VistaSecundaria.class.getResource("/de/javasoft/plaf/synthetica/orangemetallic/images/checkBox_selected.png")));
 		lblImagenApp = new javax.swing.JLabel();
 
 		setTitle("Registro Hotelero");
@@ -100,17 +103,29 @@ public class VistaSecundaria extends javax.swing.JFrame {
 		lblID.setText("ID");
 
 		javax.swing.GroupLayout jPanelLabelsLayout = new javax.swing.GroupLayout(jPanelLabels);
-		jPanelLabelsLayout.setHorizontalGroup(jPanelLabelsLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(jPanelLabelsLayout.createSequentialGroup().addContainerGap(20, Short.MAX_VALUE)
-						.addGroup(jPanelLabelsLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(lblID, Alignment.TRAILING).addComponent(lblPrecio, Alignment.TRAILING)
-								.addComponent(lblNombApellidos, Alignment.TRAILING)
-								.addComponent(lblHabitacion, Alignment.TRAILING))));
-		jPanelLabelsLayout.setVerticalGroup(jPanelLabelsLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(jPanelLabelsLayout.createSequentialGroup().addGap(28).addComponent(lblHabitacion).addGap(43)
-						.addComponent(lblNombApellidos).addGap(47).addComponent(lblID)
-						.addPreferredGap(ComponentPlacement.RELATED, 57, Short.MAX_VALUE).addComponent(lblPrecio)
-						.addGap(29)));
+		jPanelLabelsLayout.setHorizontalGroup(
+			jPanelLabelsLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanelLabelsLayout.createSequentialGroup()
+					.addContainerGap(20, Short.MAX_VALUE)
+					.addGroup(jPanelLabelsLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(lblHabitacion, Alignment.TRAILING)
+						.addComponent(lblNombApellidos, Alignment.TRAILING)
+						.addComponent(lblID, Alignment.TRAILING)
+						.addComponent(lblPrecio, Alignment.TRAILING)))
+		);
+		jPanelLabelsLayout.setVerticalGroup(
+			jPanelLabelsLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanelLabelsLayout.createSequentialGroup()
+					.addGap(28)
+					.addComponent(lblHabitacion)
+					.addGap(54)
+					.addComponent(lblNombApellidos)
+					.addGap(42)
+					.addComponent(lblID)
+					.addPreferredGap(ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+					.addComponent(lblPrecio)
+					.addGap(25))
+		);
 		jPanelLabels.setLayout(jPanelLabelsLayout);
 
 		btnRegistrar.setText("Registrar huesped");
@@ -133,32 +148,30 @@ public class VistaSecundaria extends javax.swing.JFrame {
 		jScrollPaneTablaDatos.setViewportView(tablaHuesped);
 
 		javax.swing.GroupLayout jPanelTextFieldsLayout = new javax.swing.GroupLayout(jPanelTextFields);
-		jPanelTextFields.setLayout(jPanelTextFieldsLayout);
-		jPanelTextFieldsLayout.setHorizontalGroup(jPanelTextFieldsLayout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(txtId)
-				.addComponent(txtNombreApellidos)
+		jPanelTextFieldsLayout.setHorizontalGroup(
+			jPanelTextFieldsLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(jPanelTextFieldsLayout.createSequentialGroup()
-						.addGroup(jPanelTextFieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 80,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 80,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addGap(0, 198, Short.MAX_VALUE)));
-		jPanelTextFieldsLayout
-				.setVerticalGroup(jPanelTextFieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(jPanelTextFieldsLayout.createSequentialGroup()
-								.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(txtHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 38,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addGap(18, 18, 18)
-								.addComponent(txtNombreApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 44,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addGap(18, 18, 18)
-								.addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 47,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addGap(27, 27, 27).addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 41,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addGap(16, 16, 16)));
+					.addGroup(jPanelTextFieldsLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(txtId, 278, 278, 278)
+						.addComponent(txtPrecio, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtNombreApellidos, 278, 278, 278)
+						.addComponent(txtHabitacion, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+		);
+		jPanelTextFieldsLayout.setVerticalGroup(
+			jPanelTextFieldsLayout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(jPanelTextFieldsLayout.createSequentialGroup()
+					.addGap(20)
+					.addComponent(txtHabitacion, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+					.addComponent(txtNombreApellidos, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
+					.addGap(28)
+					.addComponent(txtId, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
+					.addGap(38)
+					.addComponent(txtPrecio, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
+					.addGap(19))
+		);
+		jPanelTextFields.setLayout(jPanelTextFieldsLayout);
 
 		btnEliminar.setText("Eliminar huesped");
 		btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -206,53 +219,67 @@ public class VistaSecundaria extends javax.swing.JFrame {
 			}
 		});
 
-		lblImagenApp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagesIcons/IconoApp.png")));
+		lblImagenApp.setIcon(new ImageIcon(VistaSecundaria.class.getResource("/ImagesIcons/walkers-iloveimg-resized-iloveimg-resized.png")));
 
 		JSeparator separator = new JSeparator();
+		separator.setBorder(new LineBorder(new Color(255, 102, 51), 1, true));
+		separator.setBackground(Color.ORANGE);
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-		layout.setHorizontalGroup(layout.createParallelGroup(Alignment.LEADING)
+		layout.setHorizontalGroup(
+			layout.createParallelGroup(Alignment.LEADING)
 				.addGroup(layout.createSequentialGroup()
-						.addGroup(layout.createParallelGroup(Alignment.TRAILING)
-								.addGroup(layout.createSequentialGroup()
-										.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(btnRegistrar).addGap(18).addComponent(btnEliminar).addGap(18)
-										.addComponent(btnOrdenar).addGap(18).addComponent(btnBuscar).addGap(18)
-										.addComponent(txtBuscar, GroupLayout.PREFERRED_SIZE, 236,
-												GroupLayout.PREFERRED_SIZE)
-										.addGap(542))
-								.addGroup(
-										layout.createSequentialGroup().addGap(62).addComponent(lblImagenApp).addGap(18)
-												.addComponent(jPanelLabels, GroupLayout.PREFERRED_SIZE,
-														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addGap(18)
-												.addComponent(jPanelTextFields, GroupLayout.PREFERRED_SIZE,
-														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addGap(0, 692, Short.MAX_VALUE))
-								.addGroup(layout.createSequentialGroup().addContainerGap().addComponent(separator,
-										GroupLayout.DEFAULT_SIZE, 1424, Short.MAX_VALUE))
-								.addGroup(layout.createSequentialGroup().addContainerGap().addComponent(
-										jScrollPaneTablaDatos, GroupLayout.DEFAULT_SIZE, 1424, Short.MAX_VALUE)))
-						.addContainerGap()));
-		layout.setVerticalGroup(layout.createParallelGroup(Alignment.LEADING)
-				.addGroup(layout.createSequentialGroup().addGap(41)
-						.addGroup(layout.createParallelGroup(Alignment.TRAILING, false)
-								.addComponent(jPanelTextFields, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addGroup(layout.createSequentialGroup().addComponent(lblImagenApp).addGap(47))
-								.addGroup(layout.createSequentialGroup()
-										.addComponent(jPanelLabels, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-												Short.MAX_VALUE)
-										.addPreferredGap(ComponentPlacement.RELATED)))
-						.addGap(18).addComponent(separator, GroupLayout.PREFERRED_SIZE, 6, GroupLayout.PREFERRED_SIZE)
-						.addGap(37)
-						.addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(btnRegistrar)
-								.addComponent(btnEliminar).addComponent(btnOrdenar).addComponent(btnBuscar)
-								.addComponent(txtBuscar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(ComponentPlacement.UNRELATED)
-						.addComponent(jScrollPaneTablaDatos, GroupLayout.DEFAULT_SIZE, 419, Short.MAX_VALUE)
-						.addGap(18)));
+					.addGroup(layout.createParallelGroup(Alignment.LEADING)
+						.addGroup(layout.createSequentialGroup()
+							.addContainerGap(22, Short.MAX_VALUE)
+							.addComponent(btnRegistrar)
+							.addGap(18)
+							.addComponent(btnEliminar)
+							.addGap(18)
+							.addComponent(btnOrdenar)
+							.addGap(18)
+							.addComponent(btnBuscar)
+							.addGap(18)
+							.addComponent(txtBuscar, GroupLayout.PREFERRED_SIZE, 236, GroupLayout.PREFERRED_SIZE)
+							.addGap(542))
+						.addGroup(layout.createSequentialGroup()
+							.addGap(62)
+							.addComponent(lblImagenApp)
+							.addGap(18)
+							.addComponent(jPanelLabels, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(jPanelTextFields, GroupLayout.PREFERRED_SIZE, 280, GroupLayout.PREFERRED_SIZE))
+						.addGroup(layout.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(jScrollPaneTablaDatos, GroupLayout.DEFAULT_SIZE, 1434, Short.MAX_VALUE)))
+					.addContainerGap())
+				.addComponent(separator, GroupLayout.DEFAULT_SIZE, 1454, Short.MAX_VALUE)
+		);
+		layout.setVerticalGroup(
+			layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(layout.createSequentialGroup()
+					.addGroup(layout.createParallelGroup(Alignment.LEADING)
+						.addGroup(layout.createSequentialGroup()
+							.addGap(41)
+							.addGroup(layout.createParallelGroup(Alignment.TRAILING, false)
+								.addComponent(jPanelTextFields, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 268, GroupLayout.PREFERRED_SIZE)
+								.addComponent(jPanelLabels, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+						.addGroup(layout.createSequentialGroup()
+							.addGap(125)
+							.addComponent(lblImagenApp, GroupLayout.PREFERRED_SIZE, 98, GroupLayout.PREFERRED_SIZE)))
+					.addGap(46)
+					.addComponent(separator, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(110)
+					.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(btnRegistrar)
+						.addComponent(btnEliminar)
+						.addComponent(btnOrdenar)
+						.addComponent(btnBuscar)
+						.addComponent(txtBuscar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(jScrollPaneTablaDatos, GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
+					.addGap(18))
+		);
 		getContentPane().setLayout(layout);
 
 		pack();
